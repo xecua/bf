@@ -1,5 +1,8 @@
 package jp.co.agilegroup.sample;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -20,7 +23,7 @@ public class HelloServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+    	Robot rb;
 		response.getWriter().append("Hello World.");
         PrintWriter out =  response.getWriter();
         out.println(3);
@@ -38,6 +41,20 @@ public class HelloServlet extends HttpServlet {
 	    out.println("</body>");
 	    out.println("</html>");
 	    out.close();
+	    try{rb = new Robot();
+	    rb.setAutoDelay(100);
+    	rb.keyPress(KeyEvent.VK_WINDOWS);
+	    rb.delay(500);
+	    rb.keyPress(KeyEvent.VK_D);
+	    rb.delay(1000);
+	    rb.keyRelease(KeyEvent.VK_D);
+	    rb.keyRelease(KeyEvent.VK_WINDOWS);}
+	    catch(AWTException e) {e.printStackTrace();}
+
+
+
+
+
 	    FreeCapture capture = new FreeCapture();
 	    capture.doCapture();
 
