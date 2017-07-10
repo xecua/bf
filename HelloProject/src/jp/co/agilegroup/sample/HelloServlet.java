@@ -25,6 +25,7 @@ public class HelloServlet extends HttpServlet {
 			throws ServletException, IOException {
     	Robot rb;
 		response.getWriter().append("Hello World.");
+		response.setContentType("text/html; charset=Shift_JIS");
         PrintWriter out =  response.getWriter();
         out.println(3);
         out.println(2342);
