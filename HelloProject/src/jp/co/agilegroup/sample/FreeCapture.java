@@ -21,7 +21,7 @@ public class FreeCapture {
 
 			CaptureFrame jf1 = new CaptureFrame(img);
 			jf1.setTitle("Capture screen");
-			jf1.setSize(300, 300);
+			jf1.setSize(2300,1100);
 			jf1.setLocation(50, 50);
 			jf1.setVisible(true);
 			Toolkit.getDefaultToolkit().beep();
