@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 
 public class CapturePanel extends JPanel {
     private static final long serialVersionUID = 1L;
-    private BufferedImage img;
     private JFileChooser chooser;
     private Dimension psize;
 
@@ -23,7 +22,9 @@ public class CapturePanel extends JPanel {
         chooser = new JFileChooser();
     }
 
-    public void paint(Graphics g) {
+    private BufferedImage img;
+
+	public void paint(Graphics g) {
         if (img != null) {
             g.drawImage(img,0,0,this);
         }

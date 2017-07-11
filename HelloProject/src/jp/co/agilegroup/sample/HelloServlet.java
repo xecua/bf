@@ -1,7 +1,9 @@
 package jp.co.agilegroup.sample;
 
 import java.awt.AWTException;
+import java.awt.Dimension;
 import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,26 +19,36 @@ import javax.swing.JFrame;
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	static int w;
+	static int h;
+	
     public HelloServlet() {
         super();
     }
 
+    static {
+    	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    	 w = screenSize.width;
+    	 h = screenSize.height;
+
+    }
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
     	Robot rb;
-		response.getWriter().append("Hello World.");
+		response.getWriter().append("警告");
 		response.setContentType("text/html; charset=Shift_JIS");
         PrintWriter out =  response.getWriter();
         out.println(3);
         out.println(2342);
 	    out.println("<html>");
-	    out.println("<head>");
-	    out.println("<title>Hello!</title>");
+	    out.println("<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=SHIFT_JIS\">");
+	    out.println("<title>勉強しろ</title>");
 	    out.println("</head>");
 	    out.println("<body>");
 	    out.println("<article>");
 	    out.println("<h1>");
-	    out.println("Hello!");
+	    out.println("勉強しろ");
 	    out.println("</h1>");
 	    out.println("</article>");
 	    out.println("</body>");
@@ -53,15 +65,12 @@ public class HelloServlet extends HttpServlet {
 	    catch(AWTException e) {e.printStackTrace();}
 
 
-
-
-
 	    FreeCapture capture = new FreeCapture();
 	    capture.doCapture();
 
 	    JFrame frame=new JFrame("test");
 	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	     frame.setSize(2310,1100);
+	     frame.setSize(w,h);
 	     frame.setVisible(true);
 
 	}
