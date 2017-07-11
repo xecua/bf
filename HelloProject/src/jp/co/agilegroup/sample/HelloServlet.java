@@ -52,13 +52,6 @@ public class HelloServlet extends HttpServlet {
 	    rb.keyRelease(KeyEvent.VK_WINDOWS);}
 	    catch(AWTException e) {e.printStackTrace();}
 
-
-
-
-
-	    FreeCapture capture = new FreeCapture();
-	    capture.doCapture();
-
 	    JFrame frame=new JFrame("test");
 	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	     frame.setSize(2310,1100);
