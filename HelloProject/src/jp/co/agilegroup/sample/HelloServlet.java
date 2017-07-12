@@ -104,6 +104,7 @@ public class HelloServlet extends HttpServlet {
 				p.add(label4);
 				Container contentPane = frame.getContentPane();
 			    contentPane.add(p, BorderLayout.CENTER);
+			    java.awt.Toolkit.getDefaultToolkit().beep();
 
 			    frame.getContentPane().add(p, BorderLayout.CENTER);
 				frame.setSize(550, 350);
