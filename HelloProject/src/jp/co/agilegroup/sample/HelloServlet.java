@@ -52,11 +52,25 @@ public class HelloServlet extends HttpServlet {
 		out.close();
 		try {
 			rb = new Robot();
-			rb.setAutoDelay(100);
+			rb.setAutoDelay(200);
+			rb.keyPress(KeyEvent.VK_WINDOWS);
+			rb.delay(500);
+			rb.keyPress(KeyEvent.VK_5);
+			rb.delay(1);
+			rb.keyRelease(KeyEvent.VK_5);
+			rb.keyRelease(KeyEvent.VK_WINDOWS);
+//
+			for (int i = 0; i < 40; i++) {
+				rb.keyPress(KeyEvent.VK_UP);
+				rb.keyRelease(KeyEvent.VK_UP);
+				rb.delay(50);
+			}
+
+			rb.setAutoDelay(200);
 			rb.keyPress(KeyEvent.VK_WINDOWS);
 			rb.delay(500);
 			rb.keyPress(KeyEvent.VK_D);
-			rb.delay(1000);
+			rb.delay(1);
 			rb.keyRelease(KeyEvent.VK_D);
 			rb.keyRelease(KeyEvent.VK_WINDOWS);
 		} catch (AWTException e) {
