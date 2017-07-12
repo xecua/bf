@@ -1,10 +1,7 @@
 ﻿package main;
 
-import java.awt.AWTException;
 import java.awt.Dimension;
-import java.awt.Robot;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -37,7 +34,6 @@ public class HelloServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-    	Robot rb;
 
     	FullScreen fs = new FullScreen();
 		response.getWriter().append("警告");
@@ -58,22 +54,15 @@ public class HelloServlet extends HttpServlet {
 	    out.println("</body>");
 	    out.println("</html>");
 	    out.close();
-	    try{rb = new Robot();
-	    rb.setAutoDelay(100);
-    	rb.keyPress(KeyEvent.VK_WINDOWS);
-	    rb.delay(500);
-	    rb.keyPress(KeyEvent.VK_D);
-	    rb.delay(1000);
-	    rb.keyRelease(KeyEvent.VK_D);
-	    rb.keyRelease(KeyEvent.VK_WINDOWS);}
-	    catch(AWTException e) {e.printStackTrace();}
-
+	   
 
 
 	    /*FreeCapture capture = new FreeCapture();
 	    capture.doCapture();*/
 
 
+	    //画面真っ白にし、それを消すとスクショ表示
+	    
 	   fs.fullScreen();
 	    
 	   	/* JFrame frame=new JFrame("test");
