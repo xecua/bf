@@ -1,4 +1,4 @@
-package jp.co.agilegroup.sample;
+package main;
 
 import java.awt.AWTException;
 import java.awt.Dimension;
@@ -15,24 +15,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JFrame;
 
+import screenshot.FreeCapture;
+
 @WebServlet("/HelloServlet")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static int w;
-	static int h;
-	
+	private static int w;
+	private static int h;
+
     public HelloServlet() {
         super();
     }
 
     static {
     	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	 w = screenSize.width;
-    	 h = screenSize.height;
+    	 setW(screenSize.width);
+    	 setH(screenSize.height);
 
     }
-    
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
     	Robot rb;
@@ -70,12 +72,24 @@ public class HelloServlet extends HttpServlet {
 
 	    JFrame frame=new JFrame("test");
 	     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	     frame.setSize(w,h);
+	     frame.setSize(getW(),getH());
 	     frame.setVisible(true);
 
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	public static int getW() {
+		return w;
+	}
+	public static void setW(int w) {
+		HelloServlet.w = w;
+	}
+	public static int getH() {
+		return h;
+	}
+	public static void setH(int h) {
+		HelloServlet.h = h;
 	}
 
 }

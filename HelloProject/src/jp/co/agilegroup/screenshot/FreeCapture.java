@@ -1,10 +1,12 @@
-package jp.co.agilegroup.sample;
+package screenshot;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+
+import main.HelloServlet;
 
 public class FreeCapture {
 
@@ -21,7 +23,7 @@ public class FreeCapture {
 
 			CaptureFrame jf1 = new CaptureFrame(img);
 			jf1.setTitle("Capture screen");
-			jf1.setSize(HelloServlet.w,HelloServlet.h);
+			jf1.setSize(HelloServlet.getW(),HelloServlet.getH());
 			jf1.setLocation(50, 50);
 			jf1.setVisible(true);
 			Toolkit.getDefaultToolkit().beep();
