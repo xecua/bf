@@ -22,10 +22,7 @@ public class FreeCapture {
 
 			final CaptureFrame jf1 = new CaptureFrame(img);
 			jf1.setTitle("Capture screen");
-<<<<<<< Updated upstream
-			jf1.setSize(2300,1100);
-			jf1.setLocation(50, 50);
-=======
+
 			
 			/* ウィンドウ装飾を無効にする */
 			jf1.setUndecorated(true);
@@ -48,7 +45,7 @@ public class FreeCapture {
 			/*jf1.setSize(HelloServlet.w,HelloServlet.h);
 			jf1.setLocation(0, 0);*/
 			
->>>>>>> Stashed changes
+
 			jf1.setVisible(true);
 			Toolkit.getDefaultToolkit().beep();
 		} catch (Exception e) {

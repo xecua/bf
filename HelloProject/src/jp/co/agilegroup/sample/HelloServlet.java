@@ -1,7 +1,9 @@
 ﻿package jp.co.agilegroup.sample;
 
 import java.awt.AWTException;
+import java.awt.Dimension;
 import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,9 +18,20 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	static int w;
+	static int h;
+	
     public HelloServlet() {
         super();
     }
+
+    static {
+    	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    	 w = screenSize.width;
+    	 h = screenSize.height;
+
+    }
+ 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,7 +39,6 @@ public class HelloServlet extends HttpServlet {
 
     	FullScreen fs = new FullScreen();
 		response.getWriter().append("警告");
-	Stashed changes
 		response.setContentType("text/html; charset=Shift_JIS");
         PrintWriter out =  response.getWriter();
         out.println(3);
