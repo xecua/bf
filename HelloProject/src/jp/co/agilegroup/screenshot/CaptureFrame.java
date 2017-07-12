@@ -1,4 +1,4 @@
-package jp.co.agilegroup.sample;
+package screenshot;
 
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
