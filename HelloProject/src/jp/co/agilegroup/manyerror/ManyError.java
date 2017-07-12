@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.Robot;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
@@ -80,6 +81,20 @@ public class ManyError {
 			frame.setVisible(true);
 			frame.setBounds(u, y, 550, 350);
 
+
+			/* Escキーを押すとウィンドウが閉じるようにする */
+			frame.addKeyListener(new KeyAdapter() {
+				public void keyPressed(KeyEvent event) {
+					switch (event.getKeyCode()) {
+					case KeyEvent.VK_ESCAPE:
+						frame.dispose();
+						frame.setEnabled(true);
+						break;
+					}
+				}
+			});
+
+			
 			TimeUnit.MILLISECONDS.sleep(130);
 		} catch (Exception e) {
 		}
