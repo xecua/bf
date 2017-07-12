@@ -1,4 +1,4 @@
-﻿package jp.co.agilegroup.sample;
+﻿package main;
 
 import java.awt.AWTException;
 import java.awt.Dimension;
@@ -14,12 +14,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import whiteScreen.FullScreen;
+
 @WebServlet("/HelloServlet")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static int w;
-	static int h;
+	private static int w;
+	private static int h;
 	
     public HelloServlet() {
         super();
@@ -27,8 +29,8 @@ public class HelloServlet extends HttpServlet {
 
     static {
     	 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    	 w = screenSize.width;
-    	 h = screenSize.height;
+    	 setW(screenSize.width);
+    	 setH(screenSize.height);
 
     }
  
@@ -83,6 +85,18 @@ public class HelloServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	public static int getH() {
+		return h;
+	}
+	public static void setH(int h) {
+		HelloServlet.h = h;
+	}
+	public static int getW() {
+		return w;
+	}
+	public static void setW(int w) {
+		HelloServlet.w = w;
 	}
 
 }

@@ -1,10 +1,13 @@
-package jp.co.agilegroup.sample;
+package whiteScreen;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
+
+import main.HelloServlet;
+import screenShot.FreeCapture;
 
 public class FullScreen {
 
@@ -25,7 +28,7 @@ public class FullScreen {
 		frame = new JFrame();
 			
 		/* サイズの設定 */
-		frame.setSize(HelloServlet.w,HelloServlet.h);
+		frame.setSize(HelloServlet.getW(),HelloServlet.getH());
 			
 		/* ウィンドウ装飾を無効にする */
 		frame.setUndecorated(true);

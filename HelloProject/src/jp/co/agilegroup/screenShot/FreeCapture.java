@@ -1,4 +1,4 @@
-package jp.co.agilegroup.sample;
+package screenShot;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
@@ -8,13 +8,15 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
+import main.HelloServlet;
+
 public class FreeCapture {
 
 
 	public void doCapture() {
 		
-		int w = HelloServlet.w - 3;
-		int h = HelloServlet.h - 3;
+		int w = HelloServlet.getW() - 3;
+		int h = HelloServlet.getH() - 3;
 		
 		try {
 			Robot r2d2 = new Robot();

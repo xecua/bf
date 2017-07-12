@@ -1,4 +1,4 @@
-package jp.co.agilegroup.sample;
+package screenShot;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
