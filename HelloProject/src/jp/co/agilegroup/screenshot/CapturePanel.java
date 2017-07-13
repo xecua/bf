@@ -1,4 +1,4 @@
-package screenshot;
+package screenShot;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class CapturePanel extends JPanel {
     private static final long serialVersionUID = 1L;
+    private BufferedImage img;
     private JFileChooser chooser;
     private Dimension psize;
 
@@ -22,9 +23,7 @@ public class CapturePanel extends JPanel {
         chooser = new JFileChooser();
     }
 
-    private BufferedImage img;
-
-	public void paint(Graphics g) {
+    public void paint(Graphics g) {
         if (img != null) {
             g.drawImage(img,0,0,this);
         }

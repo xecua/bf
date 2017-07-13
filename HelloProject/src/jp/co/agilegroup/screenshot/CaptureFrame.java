@@ -1,4 +1,4 @@
-package screenshot;
+package screenShot;
 
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
@@ -15,6 +15,7 @@ public class CaptureFrame extends JFrame {
 
 	public CaptureFrame(BufferedImage img) {
 		super();
+		
 		jp1 = new CapturePanel(img);
 		this.getContentPane().setLayout(new BorderLayout());
 		js1 = new JScrollPane(jp1);
