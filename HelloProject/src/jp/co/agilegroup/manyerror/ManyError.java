@@ -39,8 +39,8 @@ public class ManyError {
 		try {
 			JFrame frame = new JFrame("Microsoft Windows");
 			int y, u;
-			y = (int) (Math.random() * HelloServlet.getH());
-			u = (int) (Math.random() * HelloServlet.getW());
+			y = (int) (Math.random()) * HelloServlet.getH() - 550;
+			u = (int) (Math.random()) * HelloServlet.getW() - 350;
 			JPanel p = new JPanel();
 			p.setBackground(Color.RED);
 			p.setLayout(null);
